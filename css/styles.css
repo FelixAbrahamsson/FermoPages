@@ -55,3 +55,14 @@ a:hover{
 	color:black;
 	opacity:1;
 }
+
+
+@media (max-width: 449px){
+	#header-title{
+		font-size:1.5em;
+	}
+	#page-title{
+		font-size:2.5em;
+		margin-bottom: 30px;
+	}
+}

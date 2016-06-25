@@ -26,6 +26,7 @@
 
 #perks-list{
 	list-style-type: none;
+	padding-left: 0;
 }
 #perks-list li{
 	display: block;
@@ -70,12 +71,8 @@ hr{
 		display: block;
 		font-size: 1.5em;
 	}
-	#header-title{
-		font-size:1.5em;
-	}
-	#page-title{
-		font-size:2.5em;
-		margin-bottom: 30px;
+	#carp-entry-container{
+		font-size: 1.8em;
 	}
 	hr{
 		width:85%;
