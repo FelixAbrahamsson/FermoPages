@@ -43,16 +43,17 @@ browser-sync start --server --directory --files "**/*"
   <div id="carp-entry-container">
     <div class="text-center">
       Cost of next carpentry level:
-      <input id="carp-entry" type="text" class="text-center"> 
+      <input id="carp-entry" type="text" class="text-center hidden-xs"> 
     </div>
-    
-    <!-- <div class="calc-button text-center">
-      <button onclick="doCalculations();"><span>Do Calculations!</span></button>
-    </div> -->
-    <hr>
+    <div class="text-center">
+      <input id="carp-entry-xs" type="text" class="text-center visible-xs"> 
+    </div>
+
+    <hr id="trimps-hr">
   </div>
 
   <div id="main-content" class="container-fluid">
+
     <div id="perks-list-container">
       <ul id="perks-list">
       </ul>

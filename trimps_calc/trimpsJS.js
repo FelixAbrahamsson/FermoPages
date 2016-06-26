@@ -32,6 +32,7 @@ function doCalculations(){
 					"cost":0.5*tough.cost};
 
 	var perks_list = new Array();
+	perks_list.push(reso)
 	perks_list.push(coord)
 	perks_list.push(resi)
 	perks_list.push(carp)
@@ -58,3 +59,5 @@ var insertHtml = function (selector, html) {
 };
 
 document.querySelector("#carp-entry").addEventListener("input", doCalculations);
+
+doCalculations();
