@@ -65,4 +65,5 @@ document.querySelector("#carp-entry-xs").addEventListener("input", function(){
 	doCalculations("carp-entry-xs");
 });
 
-doCalculations();
+doCalculations("carp-entry");
+doCalculations("carp-entry-xs");
