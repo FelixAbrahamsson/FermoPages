@@ -59,5 +59,6 @@ var insertHtml = function (selector, html) {
 };
 
 document.querySelector("#carp-entry").addEventListener("input", doCalculations);
+document.querySelector("#carp-entry-xs").addEventListener("input", doCalculations);
 
 doCalculations();
