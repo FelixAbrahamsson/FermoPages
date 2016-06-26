@@ -1,8 +1,8 @@
 
 
-function doCalculations(){
+function doCalculations(selector_id){
 	var carp = {"name":"Carpentry",
-					"cost":document.getElementById("carp-entry").value};
+					"cost":document.getElementById(selector_id).value};
 
 	var coord = {"name":"Coordinated",
 					"cost":2.5*carp.cost};
@@ -58,7 +58,11 @@ var insertHtml = function (selector, html) {
 	targetElem.innerHTML = html;
 };
 
-document.querySelector("#carp-entry").addEventListener("input", doCalculations);
-document.querySelector("#carp-entry-xs").addEventListener("input", doCalculations);
+document.querySelector("#carp-entry").addEventListener("input", function(){
+	doCalculations("carp-entry");
+});
+document.querySelector("#carp-entry-xs").addEventListener("input", function(){
+	doCalculations("carp-entry-xs");
+});
 
 doCalculations();
