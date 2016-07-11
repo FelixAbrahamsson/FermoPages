@@ -34,6 +34,15 @@
 	margin-top:10px;
 }
 
+.prime-box{
+	border: 1px solid black;
+	/*float:left;*/
+	padding-left:4px;
+	padding-right:4px;
+	background-color:white;
+	font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+}
+
 @media (max-width:606px){
 	.entry-button{
 		margin-top:10px;

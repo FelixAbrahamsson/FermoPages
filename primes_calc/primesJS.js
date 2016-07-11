@@ -78,7 +78,7 @@ function findClosestPrime(){
 	insertHtml('#entry-result', html);
 }
 
-function findAllPrimes(globals){
+function findAllPrimesOLD(){
 	var entry_number = document.getElementById("maximum-entry").value;
 	var html = '<span>';
 	/*integer check*/
@@ -128,13 +128,80 @@ function findAllPrimes(globals){
 
 }
 
+
+function findAllPrimes(){
+	var entry_number = document.getElementById("maximum-entry").value;
+	var resultId = '#all-primes-result'
+	insertHtml(resultId,'') /*Clear the result div*/
+	var html = '';
+	var date = new Date();
+	var before = date.getTime()/1000;
+	/*integer check*/
+	var is_int = isInt(entry_number);
+	if (!is_int){
+/*		entry_number === parseInt(entry_number,10)){*/
+		html+='<div class="text-center">'
+		html+=entry_number+" is not an integer! Enter an integer instead.";
+		html+='</div>'
+		insertHtml(resultId, html);
+	}else{
+		var primes = new Array();
+		var use_timeout = document.querySelector("#timeout-checkbox").checked;
+		
+		for(var current_number=2; current_number <= entry_number; current_number++){
+			var biggest_denom = Math.ceil(Math.sqrt(current_number));
+			var is_prime = true;
+			for(idx in primes){
+				if(primes[idx]>biggest_denom){
+					break;
+				}
+				if(current_number%primes[idx]==0)
+					is_prime=false;
+			}
+			if(is_prime){
+				html+='<div class="prime-box col-xs-4 col-sm-2 col-md-1 col-lg-1 text-center">'
+				html+=current_number
+				html+='</div>'
+				
+				primes.push(current_number);
+			}
+			if(use_timeout){
+				now = Date.now()/1000;
+				if(now-before>3){ /*Greater than # seconds*/
+					alert("Took too long! Interrupted at "+current_number+".");
+					break;
+				}
+			}
+		} /*End of for loop*/
+		var title_html = '<h3 class="text-center">';
+		title_html+="Found "+primes.length+" primes:";
+		title_html+="</h3>";
+		html = title_html+html;
+		insertHtml(resultId, html);
+
+	} /*End of else*/
+
+
+}
+
 function isInt(value) {
   return !isNaN(value) && (function(x) { return (x | 0) === x; })(parseFloat(value))
 }
 
-var insertHtml = function (selector, html) {
+var insertHtml = function (selector, html, overwrite) {
+	if (overwrite === undefined){
+		overwrite=true; /*default value is to overwrite*/
+	}else{
+		overwrite=false;
+	}
+
 	var targetElem = document.querySelector(selector);
-	targetElem.innerHTML = html;
+	if(overwrite==true){
+		targetElem.innerHTML = html;
+	}else{
+		targetElem.innerHTML += html;
+	}
+	
 };
 
 document.querySelector("#check-button").addEventListener("click", checkEntry);
