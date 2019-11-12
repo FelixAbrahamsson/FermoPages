@@ -1,0 +1,54 @@
+.entry-button{
+	margin-left:40px;
+
+}
+.entry-widgets{
+	font-size:1.2em;
+}
+.entry-text{
+	font-size: 2em;
+	margin-bottom:10px;
+}
+#entry-result{
+	font-size: 1.5em;
+	margin-top:20px;
+}
+.primes-hr{
+	border:2px solid #ff3232;
+	width:70%;
+	margin-top:25px;
+	margin-bottom:50px;
+}
+#all-primes-result{
+	font-size: 1.5em;
+	margin-top:20px;
+	width:80%;
+	margin-left:auto;
+	margin-right:auto;
+}
+#timeout-span{
+	margin-left:30px;
+}
+
+#timeout-container{
+	margin-top:10px;
+}
+
+.prime-box{
+	border: 1px solid black;
+	/*float:left;*/
+	padding-left:4px;
+	padding-right:4px;
+	background-color:white;
+	font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+}
+
+@media (max-width:606px){
+	.entry-button{
+		margin-top:10px;
+		display:block;
+		margin-left:auto;
+		margin-right:auto;
+		clear:both;
+	}
+}
